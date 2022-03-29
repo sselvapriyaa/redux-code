@@ -62,7 +62,7 @@ console.log(color);
      <input type ="radio" name = "colr" value = "green" onClick={()=>dispatch(green())}/>Green
      <input type ="radio" name = "colr" value = "orange" onClick={()=>dispatch(orange())}/>Orange
      <h3>
-          Your favorite color is:{color}
+          Your favorite color is: {color}
          
      </h3>
 
