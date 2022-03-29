@@ -2,12 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+//import {createStore,applyMiddleware,//} from 'redux';
+import {createStore} from 'redux';
+//import counterReducer from './reducer/CounterReducer';
+//import ColorChoiceReducer from './reducer/ColorChoiceReducer';
+import ColorChooseReducer from './reducer/ColorChooseReducer';
+//import postReducer from './reducer/postReducer';
+import {Provider} from 'react-redux';
+//import {myLogger} from './middleware/myLogger';
 import reportWebVitals from './reportWebVitals';
 
+//const store = createStore(counterReducer);
+const store = createStore(ColorChooseReducer);
+//const store = createStore(ColorReducer);
+//const store = createStore(ColorReducer, applyMiddleware(myLogger));
+//const store = createStore(postReducer);
+console.log('Store created');
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store = {store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
