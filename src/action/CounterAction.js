@@ -11,3 +11,18 @@ export const decrement = () => {
     };
 
 }
+const INITIAL_STATE = {
+	name: '',
+	books: []
+}
+
+export default (state = INITIAL_STATE, action={}) => {
+	switch(action.type) {
+		case "SET_DATA":
+			return {
+				name:e.target.value
+			};
+		default:
+			return state;
+	}
+};

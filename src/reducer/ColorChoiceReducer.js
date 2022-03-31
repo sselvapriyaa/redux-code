@@ -2,7 +2,7 @@ const initialState={
     color: 'White'
 }
 
-const ColorReducer = (state = initialState, action) =>{
+const ColorChoiceReducer = (state = initialState, action) =>{
     const newState = {...state};
     switch(action.type){
         case 'CHANGE_COLOR':
@@ -14,4 +14,4 @@ const ColorReducer = (state = initialState, action) =>{
     console.log('NewState',newState);
     return newState;
     }
-    export default ColorReducer;
+    export default ColorChoiceReducer;

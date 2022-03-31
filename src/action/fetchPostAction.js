@@ -1,10 +1,15 @@
 import axios from "axios";
 
-const fetchPostAction = async () =>{
-    const response = await axios.get("https:jsonplaceholder.typicode.com/posts")
-    return{
+export const fetchPostAction = () =>{
+
+    return async(dispatch) =>{  
+    const response = await axios.get("https:jsonplaceholder.typicode.com/posts");
+    console.log(response.data);
+    dispatch({
         type: "FETCH_POSTS",
         payload: response.data
+
+ })
 
     }
     

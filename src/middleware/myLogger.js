@@ -6,3 +6,4 @@ export const myLogger = store => {
         }
     }
 }
+export default myLogger;

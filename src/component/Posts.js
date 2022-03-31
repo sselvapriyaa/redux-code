@@ -3,17 +3,21 @@ import { useDispatch } from 'react-redux';
 import {fetchPostAction} from '../action/fetchPostAction';
 import {useSelector} from 'react-redux';
 
-function Post(props){
+function Posts(props){
     const dispatch = useDispatch();
-    const value = useSelector(state=>state);
+    const values = useSelector(state=>state);
+    const titles = values ? values.map((val) =>
+    <li key = {val.id}>{val.title}</li>): "No data found"
+    console.log({titles});
     useEffect(()=> {
         dispatch(fetchPostAction());
     },[])
      return(
          <div>
-             <h1>Data from API call :{value}</h1>
+             <h1>Data from API call: </h1>
+             <p>{titles}</p>
          </div>
      )
 
 }
-export default Post;
+export default Posts;
